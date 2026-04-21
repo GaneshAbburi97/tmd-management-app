@@ -16,7 +16,7 @@ const ScreenTemplate: React.FC<Props> = ({ title, subtitle }) => (
 );
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: spacing.md },
+  container: { padding: spacing.md },
   subtitle: { marginTop: spacing.sm },
 });
 

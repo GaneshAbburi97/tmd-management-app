@@ -7,9 +7,9 @@ export const loginThunk = (email: string, password: string): AppThunk => async (
   dispatch(setAuthLoading(true));
   try {
     const { data } = await authService.login({ email, password });
-    const tokens = data.data;
-    dispatch(setTokens(tokens));
-    await storageService.saveTokens(tokens);
+    const authTokens = data.data;
+    dispatch(setTokens(authTokens));
+    await storageService.saveTokens(authTokens);
   } finally {
     dispatch(setAuthLoading(false));
   }
