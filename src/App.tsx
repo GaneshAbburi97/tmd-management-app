@@ -6,9 +6,12 @@ import RootNavigator from './navigation/RootNavigator';
 import { store } from './store/store';
 import { appTheme } from './config/theme';
 import { storageService } from './services/storageService';
+import { bootstrapCsrf } from './services/api';
 
 const App = () => {
   useEffect(() => {
+    // ✅ Fixed: fetch initial CSRF token from backend before any POST requests fire
+    bootstrapCsrf().catch(() => undefined);
     storageService.initOfflineDatabase().catch(() => undefined);
   }, []);
 

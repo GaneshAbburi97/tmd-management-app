@@ -19,7 +19,7 @@ const RootNavigator = () => {
       }
     });
   }, [dispatch]);
-
+console.log('ROOT isAuthenticated:', isAuthenticated);
   return <NavigationContainer>{isAuthenticated ? <AppNavigator /> : <AuthNavigator />}</NavigationContainer>;
 };
 

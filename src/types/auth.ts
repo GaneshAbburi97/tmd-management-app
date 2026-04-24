@@ -8,8 +8,10 @@ export interface LoginPayload {
   password: string;
 }
 
+// ✅ Fixed: was { fullName: string } — backend expects firstName + lastName separately
 export interface RegisterPayload {
   email: string;
   password: string;
-  fullName: string;
+  firstName: string;
+  lastName: string;
 }
